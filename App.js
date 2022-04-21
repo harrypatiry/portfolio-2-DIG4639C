@@ -24,7 +24,7 @@ export default function App() {
 
 export const styles = StyleSheet.create({
 	container: {
-		paddingal: 16,
+		padding: 16,
 		height: "100%",
 		flex: 1,
 	},

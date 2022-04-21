@@ -7,7 +7,7 @@ export default function Home() {
 		<View style={styles.container}>
 			<Text>Home</Text>
             <Pressable style={styles.button}>
-                <Text>start</Text>
+                <Text style={styles.text}>start</Text>
             </Pressable>
 		</View>
 	);
