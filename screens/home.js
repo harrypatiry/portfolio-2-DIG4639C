@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native-web';
+import { StyleSheet, View, Text, Button, Pressable } from 'react-native';
+import { styles } from '../App';
 
 export default function Home() {
 	return (
 		<View style={styles.container}>
 			<Text>Home</Text>
+            <Pressable style={styles.button}>
+                <Text>start</Text>
+            </Pressable>
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		paddingTop: 40,
-		paddingHorizontal: 16,
-	},
-})

@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native-web';
+import { StyleSheet, View, Text, Button, Pressable } from 'react-native';
+import { styles } from '../App';
 
 export default function Quiz() {
 	return (
 		<View style={styles.container}>
-			<Text>Quiz</Text>
+			<Text style={styles.header}>Question</Text>
+            <Pressable style={styles.button}>
+                <Text style={styles.text}>Option</Text>
+            </Pressable>
+            <Pressable style={styles.button}>
+                <Text style={styles.text}>Option</Text>
+            </Pressable>
+            <Pressable style={styles.button}>
+                <Text style={styles.text}>Option</Text>
+            </Pressable>
+            <Pressable style={styles.button}>
+                <Text style={styles.text}>Option</Text>
+            </Pressable>
+            <Pressable style={[styles.button, styles.footer]}>
+                <Text style={styles.text}>next</Text>
+            </Pressable>
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		paddingTop: 40,
-		paddingHorizontal: 16,
-	},
-})
