@@ -1,1 +1,4 @@
-# portfolio-2-DIG4639C
+Quiz React Project for DIG4639C
+
+- npm install
+- npm start
