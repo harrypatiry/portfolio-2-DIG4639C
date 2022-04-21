@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native-web';
-import Home from './screens/home';
-import Quiz from './screens/quiz';
-import Result from './screens/result';
 
-export default function App() {
+export default function Result() {
 	return (
 		<View style={styles.container}>
-			<Home></Home>
+			<Text>result</Text>
 		</View>
 	);
 }
