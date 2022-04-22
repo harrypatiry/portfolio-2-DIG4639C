@@ -10,15 +10,13 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
-		<View style={styles.container}>
-			<NavigationContainer>
-				<Stack.Navigator>
-					<Stack.Screen name="Home" component={Home} />
-					<Stack.Screen name="Quiz" component={Quiz} />
-					<Stack.Screen name="Results" component={Results} />
-				</Stack.Navigator>
-    		</NavigationContainer>
-		</View>
+		<NavigationContainer style={styles.container}>
+			<Stack.Navigator>
+				<Stack.Screen name="Home" component={Home} />
+				<Stack.Screen name="Quiz" component={Quiz} />
+				<Stack.Screen name="Results" component={Results} />
+			</Stack.Navigator>
+		</NavigationContainer>
 	);
 }
 
@@ -45,11 +43,18 @@ export const styles = StyleSheet.create({
 		letterSpacing: 0.25,
 		color: 'white',
 	  },
+	  incorrect: {
+		textDecorationLine: "line-through",
+		textDecorationStyle: "solid",
+	  },
 	  header: {
+		alignItems: 'center',
+		justifyContent: 'center',
 		marginVertical: 12,
 	  },
 	  footer: {
 		alignItems: 'center',
+		paddingVertical: 12,
 		marginBottom: 16,
 		justifyContent: 'bottom',
 	  },
