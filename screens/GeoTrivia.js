@@ -1,33 +1,43 @@
-import React, { createContext, useCallback, useEffect, useState } from 'react';
-import { StyleSheet, View, Text, Button, Pressable } from 'react-native';
+import React, { useState } from 'react';
+import { Text, Pressable } from 'react-native';
 import { styles } from '../App';
 
 
-export default function Trivia({ navigation, props }) {
+export default function GeoTrivia({ navigation }) {
   let [score, setScore] = useState(0);
   let [question, setQuestion] = useState(0);
   let [showResults, setShowResults] = useState(false);
   let questions = [
     {
-          title: "Question Title",
+          title: "What is the largest country in the world?",
           multipleAnswers: true,
           answers: [
-            { id: 0, correct: false, title: "Question 1" },
-            { id: 1, correct: false, title: "Question 2" },
-            { id: 2, correct: false, title: "Question 3" },
-            { id: 3, correct: true, title: "Question 4" },
+            { id: 0, correct: true, title: "Russia" },
+            { id: 1, correct: false, title: "United States" },
+            { id: 2, correct: false, title: "China" },
+            { id: 3, correct: false, title: "Australia" },
           ],
         },
         {
-          title: "Question Title 2",
+          title: "Where are the Spanish Steps located?",
           multipleAnswers: true,
           answers: [
-            { id: 0, correct: false, title: "Question A" },
-            { id: 1, correct: true, title: "Question B" },
-            { id: 2, correct: false, title: "Question C" },
-            { id: 3, correct: false, title: "Question D" },
+            { id: 0, correct: false, title: "Spain" },
+            { id: 1, correct: true, title: "Italy" },
+            { id: 2, correct: false, title: "France" },
+            { id: 3, correct: false, title: "England" },
           ],
         },
+        {
+            title: "Where was the first organized marathon held?",
+            multipleAnswers: true,
+            answers: [
+              { id: 0, correct: false, title: "Italy" },
+              { id: 1, correct: false, title: "Spain" },
+              { id: 2, correct: true, title: "Greece" },
+              { id: 3, correct: false, title: "China" },
+            ],
+          },
       ];
 
     let answer = (correct) => {
@@ -41,13 +51,15 @@ export default function Trivia({ navigation, props }) {
           setShowResults(true);
         }
       };
-      let finalScore = score;
       return (
         <div>
           {showResults ? (
-              <Pressable score={score} onPress={() => navigation.navigate("Results")} style={styles.button}>
-                <Text style={styles.text}>Results</Text>
+            <div>
+              <h2>score: {score}</h2>
+              <Pressable score={score} onPress={() => navigation.navigate("Home")} style={styles.button}>
+                <Text style={styles.text}>Home</Text>
               </Pressable>
+            </div>
           ) : (
             <div>
               <h2>
@@ -67,7 +79,6 @@ export default function Trivia({ navigation, props }) {
                   );
                 })}
               </ul>
-              <p>{score}</p>
             </div>
           )}
         </div>
