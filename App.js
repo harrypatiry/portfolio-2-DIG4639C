@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Home from './screens/Home';
-import Quiz from './screens/Quiz';
+import Trivia from './screens/Trivia';
 import Results from './screens/Results';
 
 const Stack = createNativeStackNavigator();
@@ -13,7 +13,7 @@ export default function App() {
 		<NavigationContainer style={styles.container}>
 			<Stack.Navigator>
 				<Stack.Screen name="Home" component={Home} />
-				<Stack.Screen name="Quiz" component={Quiz} />
+				<Stack.Screen name="Trivia" component={Trivia} />
 				<Stack.Screen name="Results" component={Results} />
 			</Stack.Navigator>
 		</NavigationContainer>
@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
 		elevation: 3,
 		borderWidth: 2,
 		borderColor: "white",
+		color: "white",
 		backgroundColor: 'black',
 	  },
 	  text: {
